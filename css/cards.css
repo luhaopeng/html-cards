@@ -1,0 +1,118 @@
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+.card-row {
+  display: flex;
+  display: -webkit-flex;
+  margin: 16px auto;
+}
+.card-row .card-col {
+  flex: 1 1 auto;
+  padding: 0 8px;
+  max-width: 20%;
+  box-sizing: border-box;
+}
+.card-row .card-col section {
+  border: solid 2px #cccccc;
+  border-top-width: 10px;
+  min-height: 100px;
+  border-radius: 4px;
+  transition: all linear 0.15s;
+}
+.card-row .card-col section:hover {
+  box-shadow: 0 0 20px #cccccc;
+}
+.card-row .card-col section.selected {
+  box-shadow: 0 0 20px #3eaf7c;
+}
+.card-row .card-col section.primary {
+  border-color: #3ca5c5;
+}
+.card-row .card-col section.primary:hover {
+  box-shadow: 0 0 20px #3ca5c5;
+}
+.card-row .card-col section.primary header {
+  border-bottom-color: #3ca5c5;
+}
+.card-row .card-col section.warning {
+  border-color: #f9b156;
+}
+.card-row .card-col section.warning:hover {
+  box-shadow: 0 0 20px #f9b156;
+}
+.card-row .card-col section.warning header {
+  border-bottom-color: #f9b156;
+}
+.card-row .card-col section.warning table td.data {
+  color: #f9b156;
+}
+.card-row .card-col section.error {
+  border-color: #d55664;
+}
+.card-row .card-col section.error:hover {
+  box-shadow: 0 0 20px #d55664;
+}
+.card-row .card-col section.error header {
+  border-bottom-color: #d55664;
+}
+.card-row .card-col section.error table td.data {
+  color: #d55664;
+}
+.card-row .card-col section header {
+  border-bottom: solid 2px #cccccc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.card-row .card-col section header div {
+  width: 70%;
+  height: 36px;
+  margin-left: 0.5rem;
+  line-height: 36px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  color: #3a5169;
+}
+.card-row .card-col section header .icon {
+  color: #cccccc;
+  font-size: 1.3rem;
+  margin-right: 0.5rem;
+}
+.card-row .card-col section header .icon.conn {
+  color: #4e6e8e;
+}
+.card-row .card-col section header .icon.disconn {
+  color: #d55664;
+}
+.card-row .card-col section .body table {
+  padding: 0.5rem;
+  width: 100%;
+  table-layout: fixed;
+}
+.card-row .card-col section .body table tr {
+  line-height: 1.5rem;
+}
+.card-row .card-col section .body table tr th {
+  text-align: left;
+  font-weight: normal;
+  padding: 0;
+  color: #2c3e50;
+}
+.card-row .card-col section .body table tr td {
+  text-align: left;
+  padding: 0;
+  color: #2c3e50;
+}
+.card-row .card-col section .body table tr td a {
+  color: #3eaf7c;
+  text-decoration: none;
+  cursor: pointer;
+}
+.card-row .card-col section .body table tr td a:hover {
+  text-decoration: underline;
+}

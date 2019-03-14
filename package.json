@@ -1,0 +1,15 @@
+{
+  "name": "html-cards",
+  "version": "0.0.1",
+  "scripts": {
+    "build": "babel js -d dist/babel && uglifyjs dist/babel/*.js -o dist/cards.min.js -c -m"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.2.5"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.4",
+    "@babel/preset-env": "^7.3.4"
+  }
+}
