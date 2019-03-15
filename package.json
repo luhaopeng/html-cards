@@ -2,7 +2,7 @@
   "name": "html-cards",
   "version": "0.0.1",
   "scripts": {
-    "build": "babel js -d dist/babel && uglifyjs dist/babel/*.js -o dist/cards.min.js -c -m"
+    "build": "babel src/cards.js -d dist && uglifyjs dist/cards.js -o dist/cards.min.js -c -m"
   },
   "dependencies": {
     "@babel/polyfill": "^7.2.5"

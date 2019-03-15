@@ -1,5 +1,6 @@
 # Cards
 卡片栅格，每行5列。
+[Demo](https://luhaopeng.github.io/html-cards/)
 
 ## 快速入门
 引入`cards.css`：
@@ -66,10 +67,10 @@ console.log(cards.selected) // 'gary'
 `disconnected`|`boolean`|已拉闸|`false`
 `contact`|`string`|联系人|`'小张'`
 `bodyTitle`|`string`|第二行表头|`'上月用电量'`
-`bodyTitle`|`string`|第三行表头，默认隐藏，非`null`时显示|`null`
+`bodyTitle2`|`string`|第三行表头，默认隐藏，非`null`时显示|`null`
 `footTitle`|`string`|最后一行表头|`'剩余电量'`
 `bodyData`|`string`|第二行数据|`'0.00'`
-`bodyData`|`string`|第三行数据，默认隐藏，非`null`时显示|`null`
+`bodyData2`|`string`|第三行数据，默认隐藏，非`null`时显示|`null`
 `footData`|`string`|最后一行数据|`'0.00'`
 `unit`|`string`|数据单位|`'kWh'`
 `link`|`function`|第二行`<a>`标签点击回调，参数为`key`|`null`
