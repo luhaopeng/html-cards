@@ -54,7 +54,7 @@ function () {
         throw new Error('Card type should be among "default", "primary", "warning", "error".');
       }
 
-      var index = (this._length - 1) / 5 | 0;
+      var index = this._length / 5 | 0;
 
       var row = this._ref.querySelectorAll('.card-row').item(index);
 
