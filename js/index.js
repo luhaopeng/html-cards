@@ -18,10 +18,12 @@ class Cards {
       title: 'Card',
       disconnected: false,
       contact: '小张',
-      rowTitle2: '上月用电量',
-      rowTitle3: '剩余电量',
-      rowData2: '0.0',
-      rowData3: '0.0',
+      bodyTitle: '上月用电量',
+      bodyTitle2: null,
+      footTitle: '剩余电量',
+      bodyData: '0.00',
+      bodyData2: null,
+      footData: '0.00',
       unit: 'kWh',
       link: null,
       key: 'key'
@@ -46,6 +48,14 @@ class Cards {
     let section = document.createElement('section')
     section.className = options.type
     section.setAttribute('data-key', options.key)
+    let insert = `
+      <tr>
+        <th>${options.bodyTitle2}</th>
+        <td>
+            ${options.bodyData2} <small>${options.unit}</small>
+        </td>
+      </tr>
+    `
     section.innerHTML = `
       <header>
         <div title="${options.title}">
@@ -63,16 +73,17 @@ class Cards {
               <td>${options.contact}</td>
             </tr>
             <tr>
-              <th>${options.rowTitle2}</th>
+              <th>${options.bodyTitle}</th>
               <td>
                   <a>
-                    ${options.rowData2} <small>${options.unit}</small>
+                    ${options.bodyData} <small>${options.unit}</small>
                   </a>
               </td>
             </tr>
+            ${options.bodyTitle2 ? insert : ''}
             <tr>
-              <th>${options.rowTitle3}</th>
-              <td class="data">${options.rowData3} <small>${options.unit}</small></td>
+              <th>${options.footTitle}</th>
+              <td class="data">${options.footData} <small>${options.unit}</small></td>
             </tr>
           </tbody>
         </table>

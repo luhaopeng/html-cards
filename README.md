@@ -1,5 +1,5 @@
 # Cards
-卡片栅格，每行最多5列。
+卡片栅格，每行5列。
 
 ## 快速入门
 引入`cards.css`：
@@ -65,10 +65,12 @@ console.log(cards.selected) // 'gary'
 `title`|`string`|节点标题|`'Card'`
 `disconnected`|`boolean`|已拉闸|`false`
 `contact`|`string`|联系人|`'小张'`
-`rowTitle2`|`string`|第二行表头|`'上月用电量'`
-`rowTitle3`|`string`|第三行表头|`'剩余电量'`
-`rowData2`|`string`|第二行数据|`'0.0'`
-`rowData3`|`string`|第三行表头|`'0.0'`
+`bodyTitle`|`string`|第二行表头|`'上月用电量'`
+`bodyTitle`|`string`|第三行表头，默认隐藏，非`null`时显示|`null`
+`footTitle`|`string`|最后一行表头|`'剩余电量'`
+`bodyData`|`string`|第二行数据|`'0.00'`
+`bodyData`|`string`|第三行数据，默认隐藏，非`null`时显示|`null`
+`footData`|`string`|最后一行数据|`'0.00'`
 `unit`|`string`|数据单位|`'kWh'`
 `link`|`function`|第二行`<a>`标签点击回调，参数为`key`|`null`
 `key`|`string`|节点key值，可通过`.selected`属性或`link`回调取得|`'key'`
@@ -81,11 +83,13 @@ cards.addChild({
   title: '义乌小商品市场10-10-102',
   disconnected: true,
   contact: '小张',
-  rowTitle2: '上月用电量',
-  rowTitle3: '剩余电量',
-  rowData2: '105.02',
-  rowData3: '24.60',
-  unit: 'kWh',
+  bodyTitle: '上期电费',
+  bodyTitle2: '本期电费',
+  footTitle: '账户余额',
+  bodyData: '105.02',
+  bodyData2: '143.37',
+  footData: '24.60',
+  unit: '元',
   link: function(key) {
     console.log(key)
   },
