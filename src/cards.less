@@ -10,147 +10,149 @@
 @text-color-link: #3eaf7c;
 
 .icon {
-    width: 1em;
-    height: 1em;
-    vertical-align: -0.15em;
-    fill: currentColor;
-    overflow: hidden;
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
 }
 
 .card-row {
-    display: flex;
-    display: -webkit-flex;
-    margin: 16px auto;
+  display: flex;
+  display: -webkit-flex;
+  margin: 16px auto;
 
-    .card-col {
-        flex: 1 1 auto;
-        padding: 0 8px;
-        max-width: 20%;
-        box-sizing: border-box;
+  .card-col {
+    flex: 1 1 auto;
+    padding: 0 8px;
+    max-width: 20%;
+    box-sizing: border-box;
 
-        section {
-            border: solid 2px @border-color-default;
-            border-top-width: 10px;
-            min-height: 100px;
-            border-radius: 4px;
-            transition: all linear 0.15s;
+    section {
+      border: solid 2px @border-color-default;
+      border-top-width: 10px;
+      min-height: 100px;
+      border-radius: 4px;
+      transition: all linear 0.15s;
+
+      &:hover {
+        box-shadow: 0 0 20px @border-color-default;
+      }
+
+      &.selected {
+        box-shadow: 0 0 20px @border-color-selected;
+      }
+
+      &.primary {
+        border-color: @border-color-primary;
+
+        &:hover {
+          box-shadow: 0 0 20px @border-color-primary;
+        }
+
+        header {
+          border-bottom-color: @border-color-primary;
+        }
+      }
+
+      &.warning {
+        border-color: @border-color-warning;
+
+        &:hover {
+          box-shadow: 0 0 20px @border-color-warning;
+        }
+
+        header {
+          border-bottom-color: @border-color-warning;
+        }
+
+        table td.data {
+          color: @border-color-warning;
+        }
+      }
+
+      &.error {
+        border-color: @border-color-error;
+
+        &:hover {
+          box-shadow: 0 0 20px @border-color-error;
+        }
+
+        header {
+          border-bottom-color: @border-color-error;
+        }
+
+        table td.data {
+          color: @border-color-error;
+        }
+      }
+
+      header {
+        border-bottom: solid 2px @border-color-default;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        div {
+          width: 70%;
+          height: 36px;
+          margin-left: 0.5rem;
+          line-height: 36px;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden;
+          color: @text-color-title;
+        }
+
+        .icon {
+          color: @border-color-default;
+          font-size: 1.3rem;
+          margin-right: 0.5rem;
+
+          &.conn {
+            color: @text-color-second;
+          }
+
+          &.disconn {
+            color: @border-color-error;
+          }
+        }
+      }
+
+      .body table {
+        padding: 0.5rem;
+        width: 100%;
+        table-layout: fixed;
+        border-collapse: separate;
+        border-spacing: 2px;
+
+        tr {
+          line-height: 1.5rem;
+        }
+
+        tr th {
+          text-align: left;
+          font-weight: normal;
+          padding: 0;
+          color: @text-color-main;
+        }
+
+        tr td {
+          text-align: left;
+          padding: 0;
+          color: @text-color-main;
+
+          a {
+            color: @text-color-link;
+            text-decoration: none;
+            cursor: pointer;
 
             &:hover {
-                box-shadow: 0 0 20px @border-color-default;
+              text-decoration: underline;
             }
-
-            &.selected {
-                box-shadow: 0 0 20px @border-color-selected;
-            }
-
-            &.primary {
-                border-color: @border-color-primary;
-
-                &:hover {
-                    box-shadow: 0 0 20px @border-color-primary;
-                }
-
-                header {
-                    border-bottom-color: @border-color-primary;
-                }
-            }
-
-            &.warning {
-                border-color: @border-color-warning;
-
-                &:hover {
-                    box-shadow: 0 0 20px @border-color-warning;
-                }
-
-                header {
-                    border-bottom-color: @border-color-warning;
-                }
-
-                table td.data {
-                    color: @border-color-warning;
-                }
-            }
-
-            &.error {
-                border-color: @border-color-error;
-
-                &:hover {
-                    box-shadow: 0 0 20px @border-color-error;
-                }
-
-                header {
-                    border-bottom-color: @border-color-error;
-                }
-
-                table td.data {
-                    color: @border-color-error;
-                }
-            }
-
-            header {
-                border-bottom: solid 2px @border-color-default;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-
-                div {
-                    width: 70%;
-                    height: 36px;
-                    margin-left: 0.5rem;
-                    line-height: 36px;
-                    text-overflow: ellipsis;
-                    white-space: nowrap;
-                    overflow: hidden;
-                    color: @text-color-title;
-                }
-
-                .icon {
-                    color: @border-color-default;
-                    font-size: 1.3rem;
-                    margin-right: 0.5rem;
-
-                    &.conn {
-                        color: @text-color-second;
-                    }
-
-                    &.disconn {
-                        color: @border-color-error;
-                    }
-                }
-            }
-
-            .body table {
-                padding: 0.5rem;
-                width: 100%;
-                table-layout: fixed;
-
-                tr {
-                    line-height: 1.5rem;
-                }
-
-                tr th {
-                    text-align: left;
-                    font-weight: normal;
-                    padding: 0;
-                    color: @text-color-main;
-                }
-
-                tr td {
-                    text-align: left;
-                    padding: 0;
-                    color: @text-color-main;
-
-                    a {
-                        color: @text-color-link;
-                        text-decoration: none;
-                        cursor: pointer;
-
-                        &:hover {
-                            text-decoration: underline;
-                        }
-                    }
-                }
-            }
+          }
         }
+      }
     }
+  }
 }

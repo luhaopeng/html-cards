@@ -93,6 +93,8 @@
   padding: 0.5rem;
   width: 100%;
   table-layout: fixed;
+  border-collapse: separate;
+  border-spacing: 2px;
 }
 .card-row .card-col section .body table tr {
   line-height: 1.5rem;
