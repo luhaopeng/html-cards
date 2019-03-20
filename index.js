@@ -1,7 +1,7 @@
 (function () {
   let cards = new Cards(document.getElementById('main'))
   let types = ['default', 'primary', 'warning', 'error']
-  let disconnected = [true, false]
+  let disconnected = [true, false, undefined]
   let rowTitles = [
     { bodyTitle: '上月用电量', footTitle: '剩余电量', unit: 'kWh' },
     { bodyTitle: '上期电费', footTitle: '账户余额', unit: '元', bodyTitle2: '本期电费' }

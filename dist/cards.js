@@ -36,7 +36,7 @@ function () {
         type: 'default',
         // 'default', 'primary', 'warning', 'error'
         title: 'Card',
-        disconnected: false,
+        disconnected: undefined,
         contact: '小张',
         bodyTitle: '上月用电量',
         bodyTitle2: null,
@@ -73,8 +73,9 @@ function () {
       var section = document.createElement('section');
       section.className = options.type;
       section.setAttribute('data-key', options.key);
-      var insert = "\n      <tr>\n        <th>".concat(options.bodyTitle2, "</th>\n        <td>\n            ").concat(options.bodyData2, " <small>").concat(options.unit, "</small>\n        </td>\n      </tr>\n    ");
-      section.innerHTML = "\n      <header>\n        <div title=\"".concat(options.title, "\">\n          ").concat(options.title, "\n        </div>\n        <svg class=\"icon ").concat(options.disconnected ? 'disconn' : 'conn', "\" aria-hidden=\"true\">\n          <use xlink:href=\"").concat(options.disconnected ? '#icondisconn1' : '#iconconn1', "\"></use>\n        </svg>\n      </header>\n      <div class=\"body\">\n        <table>\n          <tbody>\n            <tr>\n              <th>\u8054\u7CFB\u4EBA</th>\n              <td>").concat(options.contact, "</td>\n            </tr>\n            <tr>\n              <th>").concat(options.bodyTitle, "</th>\n              <td>\n                  <a>\n                    ").concat(options.bodyData, " <small>").concat(options.unit, "</small>\n                  </a>\n              </td>\n            </tr>\n            ").concat(options.bodyTitle2 ? insert : '', "\n            <tr>\n              <th>").concat(options.footTitle, "</th>\n              <td class=\"data\">").concat(options.footData, " <small>").concat(options.unit, "</small></td>\n            </tr>\n          </tbody>\n        </table>\n      </div>\n    ");
+      var bodyRow2 = "\n      <tr>\n        <th>".concat(options.bodyTitle2, "</th>\n        <td>\n            ").concat(options.bodyData2, " <small>").concat(options.unit, "</small>\n        </td>\n      </tr>\n    ");
+      var svg = "\n      <svg class=\"icon ".concat(options.disconnected ? 'disconn' : 'conn', "\" aria-hidden=\"true\">\n        <use xlink:href=\"").concat(options.disconnected ? '#icondisconn1' : '#iconconn1', "\"></use>\n      </svg>\n    ");
+      section.innerHTML = "\n      <header>\n        <div title=\"".concat(options.title, "\">\n          ").concat(options.title, "\n        </div>\n        ").concat(typeof options.disconnected === 'undefined' ? '' : svg, "\n      </header>\n      <div class=\"body\">\n        <table>\n          <tbody>\n            <tr>\n              <th>\u8054\u7CFB\u4EBA</th>\n              <td>").concat(options.contact, "</td>\n            </tr>\n            <tr>\n              <th>").concat(options.bodyTitle, "</th>\n              <td>\n                  <a>\n                    ").concat(options.bodyData, " <small>").concat(options.unit, "</small>\n                  </a>\n              </td>\n            </tr>\n            ").concat(options.bodyTitle2 ? bodyRow2 : '', "\n            <tr>\n              <th>").concat(options.footTitle, "</th>\n              <td class=\"data\">").concat(options.footData, " <small>").concat(options.unit, "</small></td>\n            </tr>\n          </tbody>\n        </table>\n      </div>\n    ");
       var that = this;
       section.addEventListener('click', function (e) {
         that._onClick(this, that, e);

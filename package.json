@@ -1,6 +1,6 @@
 {
   "name": "html-cards",
-  "version": "0.0.1",
+  "version": "0.1.1",
   "scripts": {
     "build": "babel src/cards.js -d dist && uglifyjs dist/cards.js -o dist/cards.min.js -c -m"
   },

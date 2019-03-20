@@ -64,7 +64,7 @@ console.log(cards.selected) // 'gary'
 :---------|:------:|:------------|:---:
 `type` |`string`|节点类型，可选`'default'`, `'primary'`, `'warning'`, `'error'`|`'default'`
 `title`|`string`|节点标题|`'Card'`
-`disconnected`|`boolean`|已拉闸|`false`
+`disconnected`|`boolean`|`true`：拉闸；`false`：合闸；`undefined`：隐藏|`undefined`
 `contact`|`string`|联系人|`'小张'`
 `bodyTitle`|`string`|第二行表头|`'上月用电量'`
 `bodyTitle2`|`string`|第三行表头，默认隐藏，非`null`时显示|`null`

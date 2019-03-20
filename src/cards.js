@@ -16,7 +16,7 @@ class Cards {
     options = Object.assign({
       type: 'default', // 'default', 'primary', 'warning', 'error'
       title: 'Card',
-      disconnected: false,
+      disconnected: undefined,
       contact: '小张',
       bodyTitle: '上月用电量',
       bodyTitle2: null,
@@ -48,7 +48,7 @@ class Cards {
     let section = document.createElement('section')
     section.className = options.type
     section.setAttribute('data-key', options.key)
-    let insert = `
+    let bodyRow2 = `
       <tr>
         <th>${options.bodyTitle2}</th>
         <td>
@@ -56,14 +56,17 @@ class Cards {
         </td>
       </tr>
     `
+    let svg = `
+      <svg class="icon ${options.disconnected ? 'disconn' : 'conn'}" aria-hidden="true">
+        <use xlink:href="${options.disconnected ? '#icondisconn1' : '#iconconn1'}"></use>
+      </svg>
+    `
     section.innerHTML = `
       <header>
         <div title="${options.title}">
           ${options.title}
         </div>
-        <svg class="icon ${options.disconnected ? 'disconn' : 'conn'}" aria-hidden="true">
-          <use xlink:href="${options.disconnected ? '#icondisconn1' : '#iconconn1'}"></use>
-        </svg>
+        ${typeof options.disconnected === 'undefined' ? '' : svg}
       </header>
       <div class="body">
         <table>
@@ -80,7 +83,7 @@ class Cards {
                   </a>
               </td>
             </tr>
-            ${options.bodyTitle2 ? insert : ''}
+            ${options.bodyTitle2 ? bodyRow2 : ''}
             <tr>
               <th>${options.footTitle}</th>
               <td class="data">${options.footData} <small>${options.unit}</small></td>
